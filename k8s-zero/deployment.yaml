@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app                  # Deployment 的名字
+spec:
+  replicas: 3                   # 告诉 K8s：我要 3 个副本
+  selector:
+    matchLabels:
+      app: my-app               # 用标签找到归属于它的 Pod
+  template:                     # 以下是每个 Pod 的模板
+    metadata:
+      labels:
+        app: my-app             # 每个 Pod 都打上这个标签
+    spec:
+      containers:
+      - name: my-app
+        image: my-app:latest
+        imagePullPolicy: Never  # Mac 本地镜像，不去网上拉
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "64Mi"      # 最少给我 64MB 内存
+            cpu: "100m"         # 最少给我 0.1 个 CPU
+          limits:
+            memory: "128Mi"     # 最多用 128MB，超了就重启
+            cpu: "200m"         # 最多用 0.2 个 CPU
