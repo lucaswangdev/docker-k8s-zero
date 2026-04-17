@@ -223,6 +223,8 @@ Docker Desktop：Settings → Docker Engine，加上：
 
 ## 六、Kubernetes 快速上手
 
+![k8s_my_app_architecture](Docker-K8s-运维操作手册.assets/k8s_my_app_architecture.svg)
+
 ### 6.1 为什么需要 K8s
 
 Docker 单机的局限：容器挂了要人工拉起，扩缩容要手动，多机器管理混乱。
