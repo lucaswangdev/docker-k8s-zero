@@ -211,8 +211,10 @@ Docker Desktop：Settings → Docker Engine，加上：
 ```json
 {
   "registry-mirrors": [
-    "https://dockerpull.org",
-    "https://docker.rainbond.cc"
+    "https://daocloud.io",
+    "https://huecker.io",
+    "https://timeweb.cloud",
+    "https://noohub.net"
   ]
 }
 ```
